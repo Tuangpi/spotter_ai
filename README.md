@@ -1,69 +1,105 @@
-# React + TypeScript + Vite
+# Spotter AI Frontend
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A small multi-page frontend built as a coding assessment project. The app presents a marketing-style website for a logistics and transportation AI platform, with product navigation for Lens, TMS, Sentinel, Extension, Spotter App, Loan Calculators, and Insights.
 
-Currently, two official plugins are available:
+## Project Overview
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+This project focuses on building a clean React application with shared layout components, route-based navigation, and reusable UI cards. The homepage introduces Spotter AI's product ecosystem, while additional routes simulate product and company information pages.
 
-## Expanding the ESLint configuration
+## Features
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+- Responsive homepage hero section and product highlights
+- Shared `Navbar` and `Footer` layout across pages
+- Client-side routing with `react-router`
+- Reusable card components for product navigation and capability summaries
+- Tailwind CSS styling for fast, consistent UI development
 
-```js
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+## Tech Stack
 
-      // Remove tseslint.configs.recommended and replace with this
-      ...tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      ...tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      ...tseslint.configs.stylisticTypeChecked,
+- React 19
+- TypeScript
+- Vite
+- React Router
+- Tailwind CSS
+- Lucide React
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+## Routes
+
+The app currently includes the following routes:
+
+- `/`
+- `/retail`
+- `/logistics`
+- `/security`
+- `/tms`
+- `/about-us`
+- `/careers`
+- `/press`
+- `/extension`
+- `/spotter_app`
+- `/loan_calculators`
+- `/insights`
+
+## Current Status
+
+The homepage, shared layout, navigation, and reusable cards are implemented. Several secondary pages are currently simple placeholder screens, which reflects the scope and time-boxing of the assessment rather than a production-complete build.
+
+## Getting Started
+
+### Prerequisites
+
+- Node.js 18+ recommended
+- npm
+
+### Installation
+
+```bash
+npm install
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+### Run Locally
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```bash
+npm run dev
 ```
+
+Then open the local Vite URL shown in the terminal, usually `http://localhost:5173`.
+
+### Build for Production
+
+```bash
+npm run build
+```
+
+### Lint
+
+```bash
+npm run lint
+```
+
+## Folder Structure
+
+```text
+src/
+  assets/        Reusable visual assets
+  components/    Shared UI components
+  constants/     Static configuration such as nav items
+  layouts/       App-level layout pieces
+  pages/         Route page components
+  routes/        Router configuration
+```
+
+## What I Focused On
+
+- Clear component separation
+- Reusable layout structure
+- Simple and readable routing setup
+- Fast local development workflow with Vite
+
+## Possible Next Improvements
+
+- Replace placeholder pages with complete product detail content
+- Improve accessibility and keyboard navigation for dropdown menus
+- Add active states and route-aware behavior across all navigation items
+- Add unit/integration tests
+- Optimize images and content for production readiness
